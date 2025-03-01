@@ -1,0 +1,15 @@
+app = "typheon-ts"
+
+
+[build]
+ image = "oven/bun:latest"
+[deploy]
+  release_command = "bun install"
+
+[env]
+  PORT = "3000"
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  min_machines_running = 1 # Cold Start防止
