@@ -1,15 +1,26 @@
-app = "typheon-ts"
+# fly.toml app configuration file generated for typheon-ts on 2025-03-02T08:56:07+09:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
 
+app = 'typheon-ts'
+primary_region = 'ord'
 
 [build]
- image = "oven/bun:latest"
+  image = 'oven/bun:latest'
+
 [deploy]
-  release_command = "bun install"
+  release_command = 'bun install'
 
 [env]
-  PORT = "3000"
+  PORT = '3000'
 
 [http_service]
   internal_port = 3000
   force_https = true
-  min_machines_running = 1 # Cold Start防止
+  min_machines_running = 1
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
