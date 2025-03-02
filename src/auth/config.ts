@@ -1,7 +1,7 @@
 import NextAuth, { type SessionStrategy } from "next-auth";
 import GitHubProvider from "next-auth/providers/github";
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
-import { db } from "../db"; // Neon.tech + Drizzle のデータベース
+import { db } from "../db/client"; // Neon.tech + Drizzle のデータベース
 
 export const authOptions = {
   providers: [

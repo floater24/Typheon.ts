@@ -3,7 +3,7 @@ import { publicProcedure, router } from "./trpc";
 import { z } from "zod";
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import { createId } from "@paralleldrive/cuid2";
-import { db } from "../db";
+import { db } from "../db/client";
 import { authOptions } from "../auth/config";
 import { getServerSession } from "next-auth/next";
 import type { users } from "../db/schema"; // Drizzleの型をインポート
